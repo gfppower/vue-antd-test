@@ -1,10 +1,31 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="balabala" ref="balabala">
+    <a-image
+            :width="200"
+            :preview="previewType"
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+    />
   </div>
-  <router-view />
 </template>
+<script lang="ts">
+    import { defineComponent,h ,computed,ref} from "vue";
+
+    export default defineComponent({
+        name: "AppAvailable",
+        setup(props, context) {
+            const balabala = ref(null)
+
+            const previewType = {
+                getContainer:balabala.value
+            }
+
+            return {
+                balabala,previewType
+            }
+        }
+    });
+
+</script>
 
 <style lang="less">
 #app {
